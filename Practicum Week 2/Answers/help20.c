@@ -5,8 +5,8 @@ int main() {
     scanf("%d", &t);
 
     for (int ask = 0; ask < t; ask++) {
-        int n[100] = {}, m[100] = {};
-        char type[100] = {};
+        int n[100], m[100];
+        char type[100];
         
         for (int i = 0; i < t; i++) {
             scanf(" %c %d %d", &type[i], &n[i], &m[i]);
@@ -19,7 +19,6 @@ int main() {
 
         for (int no = 0; no < t; no++) {
             printf("Pattern no : %d\n", no + 1);
-            //printf("type : %c, rows : %d, digits: %d\n", type[no], n[no], m[no]);
 
             if (type[no] == 'A') {
                 for (int i = 1; i <= n[no]; i++) {
@@ -44,7 +43,6 @@ int main() {
                         printf(" ");
                     }
 
-                    //printf("type : %c, rows : %d, row : %i:", type[no], n[i - 1], i);
                     for (int j = 0; j <= m[no] - 1; j++) {
                         if (j % 2 == 0) {
                             printf("-");
@@ -56,7 +54,6 @@ int main() {
                 }
             }
         }
-
         break;
     }
     return 0;
