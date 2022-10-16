@@ -23,7 +23,7 @@ int main() {
             if (type[no] == 'A') {
                 for (int i = 1; i <= n[no]; i++) {
                     // make the spaces for odd and even step
-                    if (i % 2 == 0) {
+                    if (i % 2 != 0) {
                         printf(" ");
                     }
 
@@ -39,7 +39,7 @@ int main() {
             } else if (type[no] == 'B') {
                 for (int i = 1; i <= n[no]; i++) {
                     // make the spaces for odd and even step
-                    if (i % 2 != 0) {
+                    if (i % 2 == 0) {
                         printf(" ");
                     }
 

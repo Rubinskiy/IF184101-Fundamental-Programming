@@ -41,7 +41,7 @@ int main() {
     for (int i = 0; i < d; i++) {
         // print avicii logo
         for (int r = 0; r < row[i]; r++) {
-            for (int c = 0; c <= col[i] + 1; c++) {
+            for (int c = 0; c < col[i]; c++) {
                 if (c == r + 1) {
                     printf(" ");
                 } else {
