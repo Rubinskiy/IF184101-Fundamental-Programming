@@ -11,6 +11,7 @@ char encrypt(char text, int key) {
     return text;
 }
 
+// hate decryption, took me a long time to figure out
 char decrypt(char text, int key) {
     if (text >= 'a' && text <= 'z') {
         int fits = 26 * (key / 26); // 26 * (55/26) = 52
