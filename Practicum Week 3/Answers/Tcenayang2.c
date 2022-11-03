@@ -11,11 +11,10 @@ char encrypt(char text, int key) {
     return text;
 }
 
-// hate decryption, took me a long time to figure out
+// decryption algorithm
 char decrypt(char text, int key) {
     if (text >= 'a' && text <= 'z') {
-        int fits = 26 * (key / 26); // 26 * (55/26) = 52
-        key = key - fits; // 55 - 52 = 3
+        key = key % 26;
         text = text - key;
         if (text < 'a') {
             text = text + 26;
@@ -23,8 +22,7 @@ char decrypt(char text, int key) {
     }
     else if (text >= 'A' && text <= 'Z') {
         //text = (((text - 'A') + (26 - key)) % 26) + 'A';
-        int fits = 26 * (key / 26); // 26 * (55/26) = 52
-        key = key - fits; // 55 - 52 = 3
+        key = key % 26;
         text = text - key;
         if (text < 'A') {
             text = text + 26;
@@ -79,7 +77,7 @@ int main() {
         } else {
             printf("Mode is not valid!");
         }
-        printf("%s\n", message[i]);
+        printf("%s\n", message[i]); 
     }
     return 0;
 }
