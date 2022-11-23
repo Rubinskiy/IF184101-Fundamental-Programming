@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <string.h>
 
-void sort(char *str) {
+void sort_and_clean(char *str) {
     int j;
-    int n = strlen(str);
     char key;
+    int n = strlen(str);
     for (int i = 1; i < n; i++) {
         key = str[i];
         j = i - 1;
@@ -14,34 +14,30 @@ void sort(char *str) {
         }
         str[j + 1] = key;
     }
-}
 
-void remove_spaces(char *str) {
-    int n = strlen(str);
     for (int i = 0; i <= n; i++) {
         if (str[i] != ' ') {
             printf("%c", str[i]);
         }
     }
+    printf("\n");
 }
 
 int main() {
     char str[1000][1000];
-    int count = 0;
+    int lines = 0;
     
     for (int i = 0; 1; i++) {
         scanf("%[^\n]s", str[i]);
         getchar();
-        count++;
+        lines++;
         if (strcmp(str[i], "exit") == 0) {
             break;
         }
     }
 
-    for (int i = 0; i < count - 1; i++) {
-        sort(str[i]);
-        remove_spaces(str[i]);
-        printf("\n");
+    for (int i = 0; i < lines - 1; i++) {
+        sort_and_clean(str[i]);
     }
 
     return 0;
